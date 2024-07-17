@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 export const GET = async () => {
   const haveIBeenPwnedData = await fetch(
     `${process.env.HOST_URL}/api/breaches?limit=10`, {
