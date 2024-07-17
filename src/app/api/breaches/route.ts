@@ -4,8 +4,8 @@ export const GET = async (request: NextRequest) => {
 
   // Get search query
   const { searchParams } = request.nextUrl
-  const limit = searchParams.get("limit")
-  const offset = searchParams.get("offset")
+  const limit = searchParams.get("limit") || "24"
+  const offset = searchParams.get("offset") || "0"
 
   /**
    * Thanks to haveibeenpwned.com for providing this API.
@@ -39,8 +39,8 @@ export const GET = async (request: NextRequest) => {
     new Date(first.BreachDate!).getTime()
   )
 
-  if (offset) result.splice(0, Number(offset))
-  if (limit) result.splice(Number(limit))
+  result.splice(0, Number(offset))
+  result.splice(Number(limit))
 
   return new Response(
     JSON.stringify(result), {
