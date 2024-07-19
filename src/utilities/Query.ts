@@ -8,23 +8,23 @@ class Query<DataType> {
   public paginated = (
     page: number,
     take: number
-  ): Paginated<DataType> => ({
-    data: this.toList().slice(
+  ): Paginated<DataType> => {
+    const wanted = this.data.slice(
       take === -1
         ? 0
         : page * take,
       take === -1
         ? undefined
         : (page + 1) * take
-    ),
-    got: this.toList().slice(
-      page * take,
-      (page + 1) * take
-    ).length,
-    page,
-    take,
-    total: this.data.length
-  })
+    )
+    return {
+      data: wanted,
+      got: wanted.length,
+      page,
+      take,
+      total: this.data.length
+    }
+  }
 
   public sort = (
     key: keyof DataType,
