@@ -1,50 +1,35 @@
-import { NextRequest } from "next/server"
+import { getLeakedDataFromHIBP } from "@/services/leakedDataServices"
+import SearchParams from "@/utilities/SearchParams"
+import Mapper from "@/utilities/Mapper"
+import Query from "@/utilities/Query"
+import { NextRequest, NextResponse } from "next/server"
 
 export const GET = async (request: NextRequest) => {
+  try {
+    const searchParams = new SearchParams(request)
+    const take = searchParams.number("take", 12)
+    const page = searchParams.number("page", 0)
+    const platformOnly = searchParams.boolean("platformOnly")
 
-  // Get search query
-  const { searchParams } = request.nextUrl
-  const limit = searchParams.get("limit") || "24"
-  const offset = searchParams.get("offset") || "0"
+    const leakedData = await getLeakedDataFromHIBP()
 
-  /**
-   * Thanks to haveibeenpwned.com for providing this API.
-   * This API endpoint created to provide a cache data to
-   * do not overload the haveibeenpwned.com API.
-   */
-  const haveIBeenPwnedData = await fetch(
-    "https://haveibeenpwned.com/api/v3/breaches", {
-    next: {
-      tags: ["breaches"],
-      revalidate: 60 * 60 * 24 // 24 hours
-    }
-  })
-  const result = await haveIBeenPwnedData.json() as Partial<HIBPwnedItem>[]
+    if (!leakedData.ok) return NextResponse.json(
+      { error: "Failed to fetch data from HIBP" },
+      { status: leakedData.status }
+    )
 
-  // Minify the data to be less verbose
-  result.forEach(item => {
-    delete item.AddedDate
-    delete item.ModifiedDate
-    delete item.IsVerified
-    delete item.IsFabricated
-    delete item.IsSensitive
-    delete item.IsRetired
-    delete item.IsSpamList
-    delete item.IsMalware
-    delete item.IsSubscriptionFree
-  })
+    const query = new Query(await leakedData.json())
 
-  result.sort((first, second) =>
-    new Date(second.BreachDate!).getTime() -
-    new Date(first.BreachDate!).getTime()
-  )
+    const result = (platformOnly
+      ? query.map(Mapper.toHIBPwnedPlatformName).sort("localeCompare", "asc")
+      : query.map(Mapper.toMinifiedHIBPwnedItem).sort("BreachDate", "asc")
+    ).paginated(page, take)
 
-  result.splice(0, Number(offset))
-  result.splice(Number(limit))
-
-  return new Response(
-    JSON.stringify(result), {
-    headers: { "Content-Type": "application/json" },
-    status: haveIBeenPwnedData.status,
-  })
+    return NextResponse.json(result)
+  } catch (error) {
+    return NextResponse.json(
+      { error: "An unexpected error occurred" },
+      { status: 500 }
+    )
+  }
 }
