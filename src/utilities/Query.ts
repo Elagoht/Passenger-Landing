@@ -10,7 +10,9 @@ class Query<DataType> {
     take: number
   ): Paginated<DataType> => ({
     data: this.toList().slice(
-      page * take,
+      take === -1
+        ? 0
+        : page * take,
       take === -1
         ? undefined
         : (page + 1) * take
