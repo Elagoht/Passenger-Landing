@@ -1,3 +1,4 @@
+import Header from "@/components/layout/Header"
 import "@/design/globals.css"
 import type { Metadata } from "next"
 import { DM_Sans as DMSans } from "next/font/google"
@@ -19,6 +20,8 @@ const RoutLayout: FC<IRoutLayoutProps> = ({
 }) =>
   <html lang="en">
     <body className={dmSans.className}>
+      <Header />
+
       {children}
     </body>
   </html>
