@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 body {
-  @apply bg-tuatara-50 text-tuatara-1000 dark:bg-tuatara-1000 dark:text-tuatara-100 mt-16 bg-cover bg-center bg-hero-light dark:bg-hero-dark bg-fixed;
+  @apply bg-tuatara-50 text-tuatara-1000 dark:bg-tuatara-1000 dark:text-tuatara-100 pt-16 bg-cover bg-center bg-hero-light dark:bg-hero-dark bg-fixed min-h-screen flex flex-col;
+}
+
+main {
+  @apply flex-1;
+}
+article {
+  @apply prose prose-lg dark:prose-invert max-w-screen-lg mx-auto;
 }
 
 mark {
@@ -21,6 +28,6 @@ mark {
 
 @media (min-height: 42rem) {
   .slide-image {
-    height: calc(100vh - 6rem);
+    height: calc(100vh - 10rem);
   }
 }
