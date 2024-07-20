@@ -13,7 +13,12 @@ const config: Config = {
         "hero-light": "url('/assets/bg-light.svg')"
       },
       maxWidth: {
+        "screen-xs": "360px",
         "screen-3xl": "1920px"
+      },
+      screens: {
+        "2xs": "361px",
+        "xs": "481px"
       },
       colors: {
         "tuatara": {
