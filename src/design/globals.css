@@ -3,5 +3,24 @@
 @tailwind utilities;
 
 body {
-  @apply bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100;
+  @apply bg-tuatara-50 text-tuatara-1000 dark:bg-tuatara-1000 dark:text-tuatara-100 mt-16 bg-cover bg-center bg-hero-light dark:bg-hero-dark bg-fixed;
+}
+
+mark {
+  @apply bg-opacity-30 dark:bg-opacity-30 bg-creamcan-500 dark:bg-creamcan-500 text-current border-b-2 border-creamcan-500 dark:border-creamcan-500 hover:bg-opacity-100 dark:hover:bg-opacity-100 transition-all hover:text-black hover:dark:text-black;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply !text-creamcan-500;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-creamcan-500;
+}
+
+@media (min-height: 42rem) {
+  .slide-image {
+    height: calc(100vh - 6rem);
+  }
 }
