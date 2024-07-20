@@ -1,7 +1,8 @@
+import Hero from "@/components/pages/main/Hero"
 import { FC } from "react"
 
-const MainPage: FC = () => {
-  return <main>Passenger: Passphrase Manager</main>
-}
+const MainPage: FC = () => <>
+  <Hero />
+</>
 
 export default MainPage

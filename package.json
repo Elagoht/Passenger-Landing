@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.11.0",
+    "classnames": "^2.5.1",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swiper": "^11.1.5",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
