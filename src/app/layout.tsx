@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import "@/design/globals.css"
 import type { Metadata } from "next"
@@ -23,6 +24,8 @@ const RoutLayout: FC<IRoutLayoutProps> = ({
       <Header />
 
       {children}
+
+      <Footer />
     </body>
   </html>
 
