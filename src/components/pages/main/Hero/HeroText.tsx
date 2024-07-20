@@ -13,7 +13,7 @@ const HeroText: FC = () => <>
   </p>
 
   <small>
-    <strong>Nerd Alert:</strong> Passenger Core can be used standalone on terminal.
+    <strong>Note to Nerds:</strong> Passenger Core can be used standalone with its CLI.
   </small>
 </>
 
