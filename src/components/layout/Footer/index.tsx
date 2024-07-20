@@ -19,19 +19,21 @@ const githubLinks = [
 
 
 const Footer: FC = () => <footer
-  className="backdrop-blur-sm p-4 lg:px-8 bg-tuatara-50 dark:bg-tuatara-1000 bg-opacity-90 dark:bg-opacity-90 flex max-lg:flex-col max-w-screen-3xl items-center justify-between gap-4 border-t border-tuatara-100 dark:border-tuatara-900"
+  className="backdrop-blur-sm p-4 lg:px-8 bg-tuatara-50 dark:bg-tuatara-1000 bg-opacity-90 dark:bg-opacity-90 border-t border-tuatara-100 dark:border-tuatara-900 flex justify-center"
 >
-  <FooterNav
-    ariaLabel="Document Links"
-    links={links}
-    icon={IconScript}
-  />
+  <div className="flex w-full max-lg:flex-col max-w-screen-3xl items-center justify-between gap-4">
+    <FooterNav
+      ariaLabel="Document Links"
+      links={links}
+      icon={IconScript}
+    />
 
-  <FooterNav
-    ariaLabel="Github Links"
-    links={githubLinks}
-    icon={IconBrandGithub}
-  />
+    <FooterNav
+      ariaLabel="Github Links"
+      links={githubLinks}
+      icon={IconBrandGithub}
+    />
+  </div>
 </footer>
 
 export default Footer
