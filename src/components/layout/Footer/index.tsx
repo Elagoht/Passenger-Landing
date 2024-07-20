@@ -5,7 +5,7 @@ import FooterNav from "./FooterNav"
 const links = [
   { text: "License", href: "/license" },
   { text: "Code of Conduct", href: "/code-of-conduct" },
-  { text: "Roadmap", href: "https://github.com/users/Elagoht/projects/3", external: true },
+  { text: "Roadmap", href: "https://github.com/users/Elagoht/projects/3", isExternal: true },
   { text: "Security Policy", href: "/security-policy" },
 ]
 

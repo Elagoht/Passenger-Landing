@@ -11,7 +11,7 @@ export interface IFooterLinkProps {
 const FooterLink: FC<IFooterLinkProps> = ({ href, text, isExternal = false }) =>
   <Link
     href={href}
-    className="underline text-tuatara-500 hover:text-tuatara-400 p-2 transition-all duration-300 ease-in-out hover:underline-offset-4 underline-offset-2 decoration-1 hover:decoration-2 decoration-tuatara-200 dark:decoration-tuatara-800"
+    className="underline text-tuatara-500 hover:text-tuatara-400 p-2 transition-all duration-300 ease-in-out hover:underline-offset-4 underline-offset-2 decoration-1 hover:decoration-2 decoration-tuatara-200 dark:decoration-tuatara-800 flex items-center gap-1"
     rel={isExternal
       ? "noopener noreferrer"
       : undefined
@@ -21,7 +21,7 @@ const FooterLink: FC<IFooterLinkProps> = ({ href, text, isExternal = false }) =>
       : undefined
     }
   >
-    {text} {isExternal && <IconExternalLink />}
+    {text} {isExternal && <IconExternalLink size={16} />}
   </Link>
 
 export default FooterLink
