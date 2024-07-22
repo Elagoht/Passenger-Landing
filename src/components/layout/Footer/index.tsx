@@ -19,7 +19,7 @@ const githubLinks = [
 
 
 const Footer: FC = () => <footer
-  className="backdrop-blur-sm p-4 lg:px-8 bg-tuatara-50 dark:bg-tuatara-1000 bg-opacity-90 dark:bg-opacity-90 border-t border-tuatara-100 dark:border-tuatara-900 flex justify-center"
+  className="backdrop-blur-sm p-2 lg:px-8 bg-tuatara-50 dark:bg-tuatara-1000 bg-opacity-90 dark:bg-opacity-90 border-t border-tuatara-100 dark:border-tuatara-900 flex justify-center"
 >
   <div className="flex w-full max-lg:flex-col max-w-screen-3xl items-center justify-between gap-4">
     <FooterNav
