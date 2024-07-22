@@ -3,7 +3,7 @@ import { FC } from "react"
 
 export const CTAButton: FC = () => {
   return <Link
-    href="/docs/getting-started"
+    href="/docs/"
     className="
     no-underline text-leaf-50 dark:text-leaf-200 text-center text-lg
     relative mt-6 p-3 rounded-md overflow-hidden
