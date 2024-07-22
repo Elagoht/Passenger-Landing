@@ -13,6 +13,7 @@ const DocsAside: FC = () => {
       pathname={pathname}
       links={[
         { title: "Introduction", href: "/docs" },
+        { title: "How It Works", href: "/docs/how-it-works" },
         { title: "Quick Start", href: "/docs/quick-start" },
         { title: "Security of Secrets", href: "/docs/security-of-secrets" },
         { title: "Productions", href: "/docs/productions" },
