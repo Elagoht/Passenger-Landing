@@ -31,9 +31,9 @@ const DocsAside: FC = () => {
       pathname={pathname}
       links={[
         { title: "API Introduction", href: "/docs/api" },
-        { title: "Core Verbs", href: "/docs/api/core-verbs" },
-        { title: "HTTP Translations", href: "/docs/api/http-translations" },
-        { title: "Error Codes", href: "/docs/api/error-codes" }
+        { title: "Core Verbs", href: "/docs/core-verbs" },
+        { title: "HTTP Translations", href: "/docs/http-translations" },
+        { title: "Error Codes", href: "/docs/error-codes" }
       ]}
     />
 
