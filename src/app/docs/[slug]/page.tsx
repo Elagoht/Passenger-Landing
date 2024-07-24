@@ -49,7 +49,9 @@ const DocsPage: FC<IDocsPageProps> = ({ params }) => {
       } : undefined}
       prev={prev ? {
         title: prev.metadata.title,
-        href: `/docs/${article.prev}`
+        href: article.prev === "introduction"
+          ? "/docs"
+          : `/docs/${article.prev}`
       } : undefined}
     />
   </>
