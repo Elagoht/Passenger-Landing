@@ -3,18 +3,21 @@
  * in the articles directory to use generating
  * static pages.
  */
-import fs from "fs"
+import { promises as fs } from "fs"
 import path from "path"
 
-const getArticles = () => {
-  const articles = fs
-    .readdirSync(path.join(process.cwd(), "src/articles"))
-    .filter((file) => file.endsWith(".md"))
+const getArticles = async () => {
+  const articlesFiles = await fs
+    .readdir(path.join(process.cwd(), "src/articles"))
+    .then((files) => files.filter(
+      (file) => file.endsWith(".md"))
+    )
 
-  return articles.map((file, index) => {
-    const fileContent = fs
-      .readFileSync(`./src/articles/${file}`, "utf-8")
-      .split("====") // Separator that every article has to have
+  const articles = articlesFiles.map(async (file, index) => {
+    const fileContent = await fs
+      .readFile(`./src/articles/${file}`, "utf-8")
+      // Separator that every article has to have
+      .then((content) => content.split("===="))
     return {
       slug: file
         .replace(/\d+-/g, "")
@@ -31,16 +34,18 @@ const getArticles = () => {
           }
         }, {} as DocMetaData),
       content: fileContent[1] || "",
-      next: articles[index + 1]
+      next: articlesFiles[index + 1]
         ?.replace(/\d+-/g, "")
         ?.replace(".md", "")
         || null,
-      prev: articles[index - 1]
+      prev: articlesFiles[index - 1]
         ?.replace(/\d+-/g, "")
         ?.replace(".md", "")
         || null
     }
   })
+
+  return Promise.all(articles)
 }
 
 export default getArticles

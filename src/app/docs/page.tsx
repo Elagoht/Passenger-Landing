@@ -7,8 +7,8 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { FC } from "react"
 
-export const generateMetadata = (): Metadata => {
-  const article = getArticles()[0]
+export const generateMetadata = async (): Promise<Metadata> => {
+  const article = (await getArticles())[0]
   if (!article) notFound()
 
   return {
@@ -21,8 +21,8 @@ export const generateMetadata = (): Metadata => {
   }
 }
 
-const DocsMainPage: FC = () => {
-  const articles = getArticles()
+const DocsMainPage: FC = async () => {
+  const articles = await getArticles()
   const article = articles[0]
   if (!article) notFound()
 

@@ -13,8 +13,8 @@ interface IDocsPageProps {
   }
 }
 
-export const generateMetadata = ({ params: { slug } }: IDocsPageProps): Metadata => {
-  const article = getArticles().find((article) => article.slug === slug)
+export const generateMetadata = async ({ params: { slug } }: IDocsPageProps): Promise<Metadata> => {
+  const article = (await getArticles()).find((article) => article.slug === slug)
   if (!article) notFound()
 
   return {
@@ -27,11 +27,11 @@ export const generateMetadata = ({ params: { slug } }: IDocsPageProps): Metadata
   }
 }
 
-export const generateStaticParams = (): IDocsPageProps[] => getArticles()
-  .map(({ slug }) => ({ params: { slug } }))
+export const generateStaticParams = async (): Promise<IDocsPageProps[]> => (
+  await getArticles()).map(({ slug }) => ({ params: { slug } }))
 
-const DocsPage: FC<IDocsPageProps> = ({ params }) => {
-  const articles = getArticles()
+const DocsPage: FC<IDocsPageProps> = async ({ params }) => {
+  const articles = await getArticles()
   const article = articles.find((article) => article.slug === params.slug)
   if (!article) notFound()
 
