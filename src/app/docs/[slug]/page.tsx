@@ -1,10 +1,11 @@
 import getArticles from "@/articles"
-import convertMarkdownToHtml from "@/lib/markdown/converter"
-import { FC } from "react"
+import DocsPageButtons from "@/components/docs/DocsPageButtons"
 import "@/design/article.css"
+import "@/design/highlight.css"
+import convertMarkdownToHtml from "@/lib/markdown/converter"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import DocsPageButtons from "@/components/docs/DocsPageButtons"
+import { FC } from "react"
 
 interface IDocsPageProps {
   readonly params: {

@@ -1,5 +1,7 @@
 import getArticles from "@/articles"
 import DocsPageButtons from "@/components/docs/DocsPageButtons"
+import "@/design/article.css"
+import "@/design/highlight.css"
 import convertMarkdownToHtml from "@/lib/markdown/converter"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"

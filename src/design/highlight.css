@@ -1,0 +1,95 @@
+.hljs {
+  @apply bg-white text-stone-900 dark:bg-stone-950 dark:text-stone-100 p-4 overflow-x-auto;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  @apply text-blue-600 dark:text-blue-400;
+}
+.hljs-link {
+  @apply text-blue-600 dark:text-blue-400 underline;
+}
+
+.hljs-built_in,
+.hljs-type {
+  @apply text-emerald-600 dark:text-emerald-400;
+}
+
+.hljs-number,
+.hljs-class {
+  @apply text-lime-600 dark:text-lime-300;
+}
+
+.hljs-string,
+.hljs-meta .hljs-string {
+  @apply text-orange-600 dark:text-orange-400;
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+  @apply text-orange-900 dark:text-orange-800;
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  @apply text-gray-900 dark:text-gray-300;
+}
+
+.hljs-comment,
+.hljs-quote {
+  @apply text-lime-600 dark:text-lime-500 italic;
+}
+
+.hljs-doctag {
+  @apply text-lime-900 dark:text-lime-700;
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-tag {
+  @apply text-gray-800 dark:text-gray-400;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.hljs-attr,
+.hljs-attribute {
+  @apply text-sky-600 dark:text-sky-300;
+}
+
+.hljs-section {
+  @apply text-yellow-600 dark:text-yellow-400;
+}
+
+.hljs-emphasis {
+  @apply italic;
+}
+
+.hljs-strong {
+  @apply font-bold;
+}
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  @apply text-amber-500 dark:text-yellow-300;
+}
+
+.hljs-addition {
+  @apply text-green-950 dark:text-green-900 inline-block w-full;
+}
+
+.hljs-deletion {
+  @apply text-red-950 dark:text-red-900 inline-block w-full;
+}
