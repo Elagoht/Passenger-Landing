@@ -28,8 +28,8 @@ export default RoutLayout
 
 export const metadata: Metadata = {
   title: {
-    default: "Passenger: Passphrase Manager",
+    default: "Passenger: Passphrase Manager | Self-Host Solution for Passphrases",
     template: "%s | Passenger: Passphrase Manager",
   },
-  description: "Keep your passwords safe in your own cloud.",
+  description: "With Passenger, keep your passphrases safe in your own cloud, not someone else's.",
 }
