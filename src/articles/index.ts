@@ -4,11 +4,10 @@
  * static pages.
  */
 import fs from "fs"
-import path from "path"
 
 const getArticles = () => {
   const articles = fs
-    .readdirSync(path.join(process.cwd(), "./src/articles"))
+    .readdirSync(`${process.cwd()}/src/articles`)
     .filter((file) => file.endsWith(".md"))
 
   return articles.map((file, index) => {
