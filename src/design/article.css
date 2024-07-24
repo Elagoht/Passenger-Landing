@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  article * {
+    @apply scroll-p-20;
+  }
+
+  article {
+    @apply text-balance;
+  }
+
+  article img {
+    @apply mx-auto;
+  }
+
+  article figcaption {
+    @apply text-center text-base text-tuatara-500;
+  }
+}
