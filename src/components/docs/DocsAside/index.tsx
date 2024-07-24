@@ -14,6 +14,7 @@ const DocsAside: FC = () => {
       links={[
         { title: "Introduction", href: "/docs" },
         { title: "How It Works", href: "/docs/how-it-works" },
+        { title: "Security Implementations", href: "/docs/security-implementations" },
         { title: "Quick Start", href: "/docs/quick-start" },
         { title: "Security of Secrets", href: "/docs/security-of-secrets" },
         { title: "Productions", href: "/docs/productions" },

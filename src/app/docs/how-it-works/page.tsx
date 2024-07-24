@@ -2,7 +2,7 @@ import DocsPageButtons from "@/components/docs/DocsPageButtons"
 import Image from "next/image"
 import { FC } from "react"
 
-const InstallationPage: FC = () => <article>
+const DocsInstallationPage: FC = () => <article>
   <h1>How It Works?</h1>
 
   <p>
@@ -97,10 +97,10 @@ const InstallationPage: FC = () => <article>
       href: "/docs/"
     }}
     next={{
-      title: "Quick Start",
-      href: "/docs/quick-start"
+      title: "Security Implementations",
+      href: "/docs/security-implementations"
     }}
   />
 </article>
 
-export default InstallationPage
+export default DocsInstallationPage
