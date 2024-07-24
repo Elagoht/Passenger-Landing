@@ -5,7 +5,7 @@ export const CTAButton: FC = () => {
   return <Link
     href="/docs/"
     className="
-    no-underline text-leaf-50 dark:text-leaf-200 text-center text-lg
+    !no-underline text-leaf-50 dark:text-leaf-200 text-center text-lg
     relative mt-6 p-3 rounded-md overflow-hidden
     bg-leaf-500 dark:bg-leaf-500 bg-opacity-70 dark:bg-opacity-20
     border-leaf-300 dark:border-leaf-600 border border-opacity-30 dark:border-opacity-50
