@@ -1,0 +1,8 @@
+declare module "highlight.js"
+declare module "markdown-it"
+declare module "markdown-it-anchor"
+declare module "markdown-it-expandable"
+declare module "markdown-it-footnote"
+declare module "markdown-it-mark"
+declare module "markdown-it-sub"
+declare module "markdown-it-sup"
