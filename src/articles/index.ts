@@ -26,9 +26,9 @@ const getArticles = () => {
           if (!key || !value) return data
           return {
             ...data,
-            [key.trim() as keyof DocMetaDataType]: value.trim()
+            [key.trim() as keyof DocMetaData]: value.trim()
           }
-        }, {} as DocMetaDataType),
+        }, {} as DocMetaData),
       content: fileContent[1] || "",
       next: articles[index + 1]
         ?.replace(/\d+-/g, "")
