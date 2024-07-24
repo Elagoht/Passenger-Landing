@@ -12,11 +12,13 @@ const convertMarkdownToHtml = (content: string): string => {
   const { escapeHtml } = new MarkdownIt().utils
 
   const converter = new MarkdownIt({
-    highlight: function (str: string, lang: string) {
-      const content: string = ""
-      try { content.concat(hljs.highlight(str, { language: lang }).value) }
-      catch { content.concat(escapeHtml(str)) }
-      return `<div class="code-container"><div class="code-header"><span class="code-lang">${lang}</span><button class="code-copy" onclick="copyCode(event, \`${escapeHtml(str).replace(/`/g, "\\`").replace(/\$/g, "\\$")}\`)">Kopyala</button></div><div class="hljs">${content}</div></div>`
+    highlight: function (str: string, lang?: string) {
+      let content: string = ""
+      if (lang && hljs.getLanguage(lang))
+        try { content = hljs.highlight(str, { language: lang }).value }
+        catch { content = escapeHtml(str) }
+      else content = escapeHtml(str)
+      return `<pre class="hljs">${content}</pre>`
     },
     html: true,
     breaks: false,
