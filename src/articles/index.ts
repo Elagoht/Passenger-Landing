@@ -15,7 +15,7 @@ const getArticles = async () => {
 
   const articles = articlesFiles.map(async (file, index) => {
     const fileContent = await fs
-      .readFile(`./src/articles/${file}`, "utf-8")
+      .readFile(path.join(process.cwd(), "src/articles", file), "utf-8")
       // Separator that every article has to have
       .then((content) => content.split("===="))
     return {
