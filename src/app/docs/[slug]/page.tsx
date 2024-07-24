@@ -27,8 +27,8 @@ export const generateMetadata = async ({ params: { slug } }: IDocsPageProps): Pr
   }
 }
 
-export const generateStaticParams = async (): Promise<IDocsPageProps[]> => (
-  await getArticles()).map(({ slug }) => ({ params: { slug } }))
+export const generateStaticParams = async (): Promise<{ slug: string }[]> =>
+  (await getArticles()).map(({ slug }) => ({ slug }))
 
 const DocsPage: FC<IDocsPageProps> = async ({ params }) => {
   const articles = await getArticles()
