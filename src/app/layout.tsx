@@ -7,11 +7,6 @@ import { FC, ReactNode } from "react"
 
 const dmSans = DMSans({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "Passenger: Passphrase Manager",
-  description: "Keep your passwords safe in your own cloud.",
-}
-
 interface IRoutLayoutProps {
   readonly children: ReactNode
 }
@@ -29,5 +24,12 @@ const RoutLayout: FC<IRoutLayoutProps> = ({
     </body>
   </html>
 
-
 export default RoutLayout
+
+export const metadata: Metadata = {
+  title: {
+    default: "Passenger: Passphrase Manager",
+    template: "%s | Passenger: Passphrase Manager",
+  },
+  description: "Keep your passwords safe in your own cloud.",
+}
