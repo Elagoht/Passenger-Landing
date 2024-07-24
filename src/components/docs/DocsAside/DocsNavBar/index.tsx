@@ -8,10 +8,8 @@ interface IDocsNavBarProps {
 }
 
 const DocsNavBar: FC<IDocsNavBarProps> = ({ title, pathname, links = [] }) =>
-
-
   <nav className="flex flex-col gap-2">
-    <b className="text-lg font-bold">{title}</b>
+    <b className="text-lg font-bold mt-2">{title}</b>
 
     <ul className="-mx-4">
       {links.map((link, index) =>
