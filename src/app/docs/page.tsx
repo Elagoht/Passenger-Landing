@@ -9,7 +9,7 @@ const DocsMainPage: FC = () => {
   const article = articles[0]
   if (!article) notFound()
 
-  const next = articles.find((article) => article.slug === article.next)
+  const next = articles.find((next) => next.slug === article.next)
 
   return <>
     <article dangerouslySetInnerHTML={{
