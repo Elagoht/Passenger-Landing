@@ -1,8 +1,8 @@
-import getArticles from "@/articles"
 import DocsPageButtons from "@/components/docs/DocsPageButtons"
 import "@/design/article.css"
 import "@/design/highlight.css"
 import convertMarkdownToHtml from "@/lib/markdown/converter"
+import getArticles from "@/utilities/Article"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { FC } from "react"
@@ -23,11 +23,11 @@ export const generateMetadata = async ({ params: { slug } }: IDocsPageProps): Pr
     keywords: article.metadata.keywords,
     authors: article.metadata.authors
       .split(",")
-      .map((author) => ({ name: author })),
+      .map((author) => ({ name: author }))
   }
 }
 
-export const generateStaticParams = async (): Promise<{ slug: string }[]> =>
+export const generateStaticParams = async (): Promise<IDocsPageProps["params"][]> =>
   (await getArticles()).map(({ slug }) => ({ slug }))
 
 const DocsPage: FC<IDocsPageProps> = async ({ params }) => {

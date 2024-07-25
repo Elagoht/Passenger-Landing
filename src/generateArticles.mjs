@@ -1,21 +1,18 @@
-/**
- * Generate articles from the markdown files
- * in the articles directory to use generating
- * static pages.
- */
 import { promises as fs } from "fs"
 import path from "path"
 
-const getArticles = async () => {
+export const generateArticles = async () => {
+  const cwd = process.cwd()
+
   const articlesFiles = await fs
-    .readdir(path.join(process.cwd(), "src/articles"))
+    .readdir(path.join(cwd, "articles"))
     .then((files) => files.filter(
       (file) => file.endsWith(".md"))
     )
 
   const articles = articlesFiles.map(async (file, index) => {
     const fileContent = await fs
-      .readFile(path.join(process.cwd(), "src/articles", file), "utf-8")
+      .readFile(path.join(cwd, "articles", file), "utf-8")
       // Separator that every article has to have
       .then((content) => content.split("===="))
     return {
@@ -30,9 +27,9 @@ const getArticles = async () => {
           if (!key || !value) return data
           return {
             ...data,
-            [key.trim() as keyof DocMetaData]: value.trim()
+            [key.trim()]: value.trim()
           }
-        }, {} as DocMetaData),
+        }, {}),
       content: fileContent[1] || "",
       next: articlesFiles[index + 1]
         ?.replace(/\d+-/g, "")
@@ -45,7 +42,15 @@ const getArticles = async () => {
     }
   })
 
-  return Promise.all(articles)
+  const processedArticle = await Promise.all(articles)
+
+  await fs.mkdir(
+    path.join(cwd, "src/generated"),
+    { recursive: true }
+  ).then(() => fs.writeFile(
+    path.join(cwd, "src/generated/articles.json"),
+    JSON.stringify(processedArticle, null, 2)
+  ))
 }
 
-export default getArticles
+generateArticles()
