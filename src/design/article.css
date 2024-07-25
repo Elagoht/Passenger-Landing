@@ -16,4 +16,8 @@
   article figcaption {
     @apply text-center text-base text-tuatara-500;
   }
+
+  article hr {
+    @apply !h-0.5 !border-none !bg-gradient-to-r !from-transparent !via-tuatara-500 to-transparent w-full;
+  }
 }
