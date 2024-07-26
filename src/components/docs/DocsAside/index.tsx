@@ -16,7 +16,7 @@ const DocsAside: FC = () => {
         { title: "How It Works", href: "/docs/how-it-works" },
         { title: "Security Implementations", href: "/docs/security-implementations" },
         { title: "Quick Start", href: "/docs/quick-start" },
-        { title: "Passenger CLI", href: "/docs/cli-tool" },
+        { title: "Passenger CLI", href: "/docs/passenger-cli" },
         { title: "Passenger Desktop", href: "/docs/passenger-desktop" },
         { title: "Passenger Server", href: "/docs/passenger-server" },
         { title: "Passenger Web", href: "/docs/passenger-web" },
