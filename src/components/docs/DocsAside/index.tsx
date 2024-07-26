@@ -16,13 +16,13 @@ const DocsAside: FC = () => {
         { title: "How It Works", href: "/docs/how-it-works" },
         { title: "Security Implementations", href: "/docs/security-implementations" },
         { title: "Quick Start", href: "/docs/quick-start" },
-        { title: "Security of Secrets", href: "/docs/security-of-secrets" },
-        { title: "Productions", href: "/docs/productions" },
-        { title: "Core CLI", href: "/docs/cli-tool" },
-        { title: "Desktop App", href: "/docs/desktop-app" },
-        { title: "Deploy Web Server", href: "/docs/deploy-web-server" },
-        { title: "Deploy Web UI", href: "/docs/deploy-web-ui" },
-        { title: "Mobile Apps", href: "/docs/mobile-apps" }
+        { title: "Passenger CLI", href: "/docs/cli-tool" },
+        { title: "Passenger Desktop", href: "/docs/passenger-desktop" },
+        { title: "Passenger Server", href: "/docs/passenger-server" },
+        { title: "Passenger Web", href: "/docs/passenger-web" },
+        { title: "Passenger Web Lite", href: "/docs/passenger-web-lite" },
+        { title: "Passenger Web Public", href: "/docs/passenger-web-public" },
+        { title: "Passenger Mobile", href: "/docs/passenger-mobile" }
       ]}
     />
 
