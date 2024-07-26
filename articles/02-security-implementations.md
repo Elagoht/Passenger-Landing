@@ -1,9 +1,9 @@
 key | value
 --- | -----
-title | Security Implementations
+title | Security Implementations
 description | How Passenger provide security of my passphrases? Is it really safe to use?
-keywords | passenger, password manager, passphrase manager, passphrases, vault, self-hosted, cloud solution, open-source, secure storage
-authors | Furkan Baytekin
+keywords | passenger, password manager, passphrase manager, passphrases, vault, self-hosted, cloud solution, open-source, secure storage
+authors | Furkan Baytekin
 
 ====
 

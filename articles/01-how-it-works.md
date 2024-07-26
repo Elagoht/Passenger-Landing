@@ -1,9 +1,9 @@
 key | value
 --- | -----
-title | How It Works
+title | How It Works
 description | How Passenger: Passphrase Manager works behind the scenes? Here is how.
-keywords | passenger, password manager, passphrase manager, passphrases, vault, self-hosted, cloud solution, open-source, secure storage
-authors | Furkan Baytekin
+keywords | passenger, password manager, passphrase manager, passphrases, vault, self-hosted, cloud solution, open-source, secure storage
+authors | Furkan Baytekin
 
 ====
 
