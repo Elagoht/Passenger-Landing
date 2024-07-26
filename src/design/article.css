@@ -2,7 +2,20 @@
 
 @layer components {
   article * {
-    @apply scroll-p-20;
+    @apply scroll-pt-20;
+  }
+
+  article h1 a,
+  article h2 a,
+  article h3 a,
+  article h4 a,
+  article h5 a,
+  article h6 a {
+    @apply no-underline text-leaf-500;
+  }
+
+  article a {
+    @apply text-creamcan-500;
   }
 
   article {

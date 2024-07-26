@@ -14,7 +14,7 @@ article {
 }
 
 mark {
-  @apply bg-opacity-30 dark:bg-opacity-30 bg-creamcan-500 dark:bg-creamcan-500 text-current border-b-2 border-creamcan-500 dark:border-creamcan-500 hover:bg-opacity-100 dark:hover:bg-opacity-100 transition-all hover:text-black hover:dark:text-black;
+  @apply bg-opacity-30 dark:bg-opacity-30 bg-creamcan-500 dark:bg-creamcan-500 text-current border-b-2 border-creamcan-500 dark:border-creamcan-500 hover:bg-opacity-100 dark:hover:bg-opacity-100 transition-all hover:text-black hover:dark:text-black rounded px-0.5;
 }
 
 .swiper-button-prev,

@@ -1,11 +1,11 @@
 import { FC } from "react"
 
 const HeroText: FC = () => <>
-  <h1 className="mb-0">
+  <h1 className="text-6xl font-bold">
     Your Secrets, In Your Vault
   </h1>
 
-  <p>
+  <p className="my-4">
     Store your passphrases in your own cloud, not someone else&apos;s.
     With our <mark>open-source</mark>, <mark>self-hosted</mark>, <mark>docker deployable</mark> solution,
     you can be sure that your secrets are safe.
