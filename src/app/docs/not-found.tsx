@@ -9,8 +9,8 @@ const DocsNotFoundPage: FC = () => <article className="h-full text-center flex i
   <hr />
 
   <p>
-    The page you are looking for does not exist. Please check the URL or go back to the
-    <a href="/docs">Docs</a>.
+    The page you are looking for does not exist. Please check
+    the URL or go back to the <a href="/docs">Docs</a>.
   </p>
 </article>
 
