@@ -98,4 +98,3 @@ Passenger CLI ==can be translated to HTTP status codes==. As you may know, in sh
 Passenger CLI is a powerful tool that can be used as a standalone tool. It is a stateless tool that does not store any data. It is a cross-platform tool that can be used on Windows, macOS, Linux and BSD. It is a core tool that is used by every client internally. It produces JSON outputs and accepts JSON inputs. It uses HTTP status codes as exit codes.
 
 If you are a nerd who loves to use the terminal, Passenger CLI is the best tool for you. But you may still consider [Passenger Server](/docs/passenger-server) if you want to use the Passenger on multiple devices.
-`;
