@@ -25,7 +25,7 @@ const Hamburger: FC = () => {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return <button
-    className="p-2.5 py-3 md:hidden flex flex-col justify-center items-center gap-1 border border-tuatara-500 rounded-md transition-transform ease-in-out outline-none hover:ring-1 hover:ring-tuatara-500 ring-offset-2 ring-offset-tuatara-50 dark:ring-offset-tuatara-1000"
+    className="p-3 md:hidden flex flex-col justify-center items-center gap-1 transition-transform ease-in-out"
     aria-label="Open Menu"
     onClick={toggle}
   >

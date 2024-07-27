@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 const DocsAside: FC = () => {
   const pathname = usePathname()
 
-  return <aside className="sticky top-16 max-w-80 w-full bg-gradient-to-b from-tuatara-100 dark:from-tuatara-950 p-4 border-x border-tuatara-50 dark:border-tuatara-900">
+  return <aside className="md:sticky md:top-16 md:max-w-64 max-md:columns-2 gap-8 max-xs:columns-1 shrink-0 w-full bg-gradient-to-b from-tuatara-50 dark:from-tuatara-950 p-4 border-x border-tuatara-50 dark:border-tuatara-900">
     <DocsNavBar
       title="Getting Started"
       pathname={pathname}
