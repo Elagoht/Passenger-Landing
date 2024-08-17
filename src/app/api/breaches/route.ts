@@ -22,7 +22,10 @@ export const GET = async (request: NextRequest) => {
 
     const result = (platformOnly
       ? query.map(Mapper.toHIBPwnedPlatformName).sort("localeCompare", "asc")
-      : query.map(Mapper.toMinifiedHIBPwnedItem).sort("BreachDate", "asc")
+      : query.map(Mapper.toMinifiedHIBPwnedItem).sort((first, second) => Number(
+        new Date(second.BreachDate).getTime() -
+        new Date(first.BreachDate).getTime()
+      ))
     ).paginated(page, take)
 
     return NextResponse.json(result)
