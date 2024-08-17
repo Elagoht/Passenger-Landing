@@ -26,18 +26,24 @@ class Query<DataType> {
     }
   }
 
-  public sort = (
-    key: keyof DataType,
-    order: "asc" | "desc"
-  ): this => {
-    this.data.sort((first, second) =>
-      (order === "asc" ? 1 : -1) * (
-        Number(first[key]) - Number(second[key])
+  public sort(key: keyof DataType, order: "asc" | "desc"): this
+  public sort(callback: (first: DataType, second: DataType) => number): this
+
+  public sort(
+    keyOrCallback: keyof DataType | ((first: DataType, second: DataType) => number),
+    order: "asc" | "desc" = "asc"
+  ): this {
+    if (typeof keyOrCallback === "function") {
+      this.data.sort(keyOrCallback)
+    } else {
+      this.data.sort((first, second) =>
+        (order === "asc" ? 1 : -1) * (
+          Number(first[keyOrCallback]) - Number(second[keyOrCallback])
+        )
       )
-    )
+    }
     return this
   }
-
   public filter = (
     criteria: (item: DataType) => boolean
   ): this => {
